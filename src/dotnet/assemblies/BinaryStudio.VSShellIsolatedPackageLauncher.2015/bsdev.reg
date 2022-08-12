@@ -1,0 +1,177 @@
+﻿This file contains information that should be merged into the registry
+from a setup program, or copied into a .reg file and merged into the
+registry for your own personal testing. If you are using a Visual Studio
+Setup Project, then simply copy the file starting below the the "CUT HERE"
+line until the end, and save it to a file with the extension .reg. Then open 
+the Registry editor for your setup program, right click on the Registry editor 
+window, select Import and then browse to the .reg file you have created. All 
+the correct settings have been made and you do not need to make any further 
+modifications. To test these settings on your computer, save the contents of 
+this file to a .reg file like you would for a Setup project, but also search 
+for the value $RootFolder$ and replace it with the directory path containing 
+your program (using double backslashes "\\" as the delimiter). 
+After saving these changes, double-click on the .reg file and merge the changes
+into the registry.
+
+--------------------------------  CUT HERE  --------------------------------
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\CLSID\{e2bce311-9196-4cc1-a415-851ee20c7239}]
+@="BinaryStudio.VSShellIsolatedPackage2015 DTE Object"
+
+[HKEY_CLASSES_ROOT\CLSID\{e2bce311-9196-4cc1-a415-851ee20c7239}\LocalServer32]
+@="$RootFolder$\\BinaryStudio.VSShellIsolatedPackage2015.exe"
+
+[HKEY_CLASSES_ROOT\CLSID\{e2bce311-9196-4cc1-a415-851ee20c7239}\ProgID]
+@="BinaryStudio.VSShellIsolatedPackage2015.DTE.1.0"
+
+[HKEY_CLASSES_ROOT\CLSID\{e2bce311-9196-4cc1-a415-851ee20c7239}\VersionIndependentProgID]
+@="BinaryStudio.VSShellIsolatedPackage2015.DTE"
+
+[HKEY_CLASSES_ROOT\CLSID\{e2bce311-9196-4cc1-a415-851ee20c7239}\Programmable]
+@=""
+
+[HKEY_CLASSES_ROOT\CLSID\{e2bce311-9196-4cc1-a415-851ee20c7239}\TypeLib]
+@="{80cc9f66-e7d8-4ddd-85b6-d9e6cd0e93e2}"
+
+[HKEY_CLASSES_ROOT\CLSID\{e2bce311-9196-4cc1-a415-851ee20c7239}\DefaultIcon]
+@="$RootFolder$\\BinaryStudio.VSShellIsolatedPackage2015.exe,1200"
+
+[HKEY_CLASSES_ROOT\CLSID\{e2bce311-9196-4cc1-a415-851ee20c7239}\Version]
+@="1.0"
+
+[HKEY_CLASSES_ROOT\CLSID\{dc958279-b010-4126-92ff-d35a5f6c1ed4}]
+@="BinaryStudio.VSShellIsolatedPackage2015 Solution Object"
+
+[HKEY_CLASSES_ROOT\CLSID\{dc958279-b010-4126-92ff-d35a5f6c1ed4}\LocalServer32]
+@="$RootFolder$\\BinaryStudio.VSShellIsolatedPackage2015.exe"
+
+[HKEY_CLASSES_ROOT\CLSID\{dc958279-b010-4126-92ff-d35a5f6c1ed4}\ProgID]
+@="BinaryStudio.VSShellIsolatedPackage2015.Solution.1.0"
+
+[HKEY_CLASSES_ROOT\CLSID\{dc958279-b010-4126-92ff-d35a5f6c1ed4}\VersionIndependentProgID]
+@="BinaryStudio.VSShellIsolatedPackage2015.Solution"
+
+[HKEY_CLASSES_ROOT\CLSID\{dc958279-b010-4126-92ff-d35a5f6c1ed4}\Programmable]
+@=""
+
+[HKEY_CLASSES_ROOT\CLSID\{dc958279-b010-4126-92ff-d35a5f6c1ed4}\TypeLib]
+@="{80cc9f66-e7d8-4ddd-85b6-d9e6cd0e93e2}"
+
+[HKEY_CLASSES_ROOT\CLSID\{dc958279-b010-4126-92ff-d35a5f6c1ed4}\DefaultIcon]
+@="$RootFolder$\\BinaryStudio.VSShellIsolatedPackage2015.exe,1200"
+
+[HKEY_CLASSES_ROOT\CLSID\{dc958279-b010-4126-92ff-d35a5f6c1ed4}\Version]
+@="1.0"
+
+[HKEY_CLASSES_ROOT\BinaryStudio_VSShellIsolatedPackage2015.DTE.1.0]
+@="BinaryStudio.VSShellIsolatedPackage2015 DTE Object"
+
+[HKEY_CLASSES_ROOT\BinaryStudio_VSShellIsolatedPackage2015.DTE.1.0\CLSID]
+@="{e2bce311-9196-4cc1-a415-851ee20c7239}"
+
+[HKEY_CLASSES_ROOT\BinaryStudio_VSShellIsolatedPackage2015.Solution.1.0]
+@="BinaryStudio.VSShellIsolatedPackage2015 Solution Object"
+
+[HKEY_CLASSES_ROOT\BinaryStudio_VSShellIsolatedPackage2015.Solution.1.0\CLSID]
+@="{dc958279-b010-4126-92ff-d35a5f6c1ed4}"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\AppEnv\14.0\Apps\BinaryStudio.VSShellIsolatedPackage2015_1.0]
+"StubExePath"="$RootFolder$\\BinaryStudio.VSShellIsolatedPackage2015.exe"
+"AppName"="BinaryStudio_VSShellIsolatedPackage2015"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\BinaryStudio.VSShellIsolatedPackage2015.exe]
+@="$RootFolder$\\BinaryStudio.VSShellIsolatedPackage2015.exe"
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_ENABLE_SCRIPT_PASTE_URLACTION_IF_PROMPT]
+"BinaryStudio.VSShellIsolatedPackage2015.exe"=dword:00000000
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_LOCALMACHINE_LOCKDOWN]
+"BinaryStudio.VSShellIsolatedPackage2015.exe"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_RESTRICT_ABOUT_PROTOCOL_IE7]
+"BinaryStudio.VSShellIsolatedPackage2015.exe"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_BLOCK_CROSS_PROTOCOL_FILE_NAVIGATION]
+"BinaryStudio.VSShellIsolatedPackage2015.exe"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_IFRAME_MAILTO_THRESHOLD]
+"BinaryStudio.VSShellIsolatedPackage2015.exe"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_SCRIPTURL_MITIGATION]
+"BinaryStudio.VSShellIsolatedPackage2015.exe"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_SHOW_APP_PROTOCOL_WARN_DIALOG]
+"BinaryStudio.VSShellIsolatedPackage2015.exe"=dword:00000001
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_VIEWLINKEDWEBOC_IS_UNSAFE]
+"BinaryStudio.VSShellIsolatedPackage2015.exe"=dword:00000001
+
+; Uncomment the entries below if you want to register a source file extension to work with Dynamic Data Exchange (DDE)
+
+;[HKEY_CLASSES_ROOT\Applications\BinaryStudio_VSShellIsolatedPackage2015.exe]
+
+;[HKEY_CLASSES_ROOT\Applications\BinaryStudio_VSShellIsolatedPackage2015.exe\shell]
+
+;[HKEY_CLASSES_ROOT\Applications\BinaryStudio_VSShellIsolatedPackage2015.exe\shell\Open]
+
+;[HKEY_CLASSES_ROOT\Applications\BinaryStudio_VSShellIsolatedPackage2015.exe\shell\Open\ddeexec]
+;@="Open(\"%1\")"
+
+;[HKEY_CLASSES_ROOT\Applications\BinaryStudio_VSShellIsolatedPackage2015.exe\shell\Open\ddeexec\Application]
+;@="BinaryStudio_VSShellIsolatedPackage2015.1.0"
+
+;[HKEY_CLASSES_ROOT\Applications\BinaryStudio_VSShellIsolatedPackage2015.exe\shell\Open\ddeexec\Topic]
+;@="system"
+
+;[HKEY_CLASSES_ROOT\Applications\BinaryStudio_VSShellIsolatedPackage2015.exe\shell\edit]
+
+;[HKEY_CLASSES_ROOT\Applications\BinaryStudio_VSShellIsolatedPackage2015.exe\shell\edit\Command]
+;@="\"$RootFolder$\\BinaryStudio.VSShellIsolatedPackage2015.exe\" /dde"
+
+;[HKEY_CLASSES_ROOT\Applications\BinaryStudio_VSShellIsolatedPackage2015.exe\shell\edit\ddeexec]
+;@="Open(\"%1\")"
+
+;[HKEY_CLASSES_ROOT\Applications\BinaryStudio_VSShellIsolatedPackage2015.exe\shell\edit\ddeexec\Application]
+;@="BinaryStudio_VSShellIsolatedPackage2015.1.0"
+
+;[HKEY_CLASSES_ROOT\Applications\BinaryStudio_VSShellIsolatedPackage2015.exe\shell\edit\ddeexec\Topic]
+;@="system"
+
+;[HKEY_CLASSES_ROOT\.BinaryStudio_VSShellIsolatedPackage2015_ext]
+;@="BinaryStudio_VSShellIsolatedPackage2015.BinaryStudio_VSShellIsolatedPackage2015_ext.1.0"
+
+;[HKEY_CLASSES_ROOT\BinaryStudio_VSShellIsolatedPackage2015.BinaryStudio_VSShellIsolatedPackage2015_ext.1.0]
+;"AlwaysShowExt"="1"
+;@="BinaryStudio.VSShellIsolatedPackage2015 Source file"
+
+;[HKEY_CLASSES_ROOT\BinaryStudio_VSShellIsolatedPackage2015.BinaryStudio_VSShellIsolatedPackage2015_ext.1.0\DefaultIcon]
+;@="$RootFolder$\\BinaryStudio.VSShellIsolatedPackage2015.exe,1200"
+
+;[HKEY_CLASSES_ROOT\BinaryStudio_VSShellIsolatedPackage2015.BinaryStudio_VSShellIsolatedPackage2015_ext.1.0\shell]
+
+;[HKEY_CLASSES_ROOT\BinaryStudio_VSShellIsolatedPackage2015.BinaryStudio_VSShellIsolatedPackage2015_ext.1.0\shell\Open]
+
+;[HKEY_CLASSES_ROOT\BinaryStudio_VSShellIsolatedPackage2015.BinaryStudio_VSShellIsolatedPackage2015_ext.1.0\shell\Open\Command]
+;@="\"$RootFolder$\\BinaryStudio.VSShellIsolatedPackage2015.exe\" /dde"
+
+;[HKEY_CLASSES_ROOT\BinaryStudio_VSShellIsolatedPackage2015.BinaryStudio_VSShellIsolatedPackage2015_ext.1.0\shell\Open\ddeexec]
+;@="Open(\"%1\")"
+
+;[HKEY_CLASSES_ROOT\BinaryStudio_VSShellIsolatedPackage2015.BinaryStudio_VSShellIsolatedPackage2015_ext.1.0\shell\Open\ddeexec\Application]
+;@="BinaryStudio_VSShellIsolatedPackage2015.1.0"
+
+;[HKEY_CLASSES_ROOT\BinaryStudio_VSShellIsolatedPackage2015.BinaryStudio_VSShellIsolatedPackage2015_ext.1.0\shell\Open\ddeexec\Topic]
+;@="system"
+
+; Uncomment the entries below if you want to register your program for participation in Set Default Programs
+; for the file extension defined above.
+
+;[HKEY_LOCAL_MACHINE\SOFTWARE\RegisteredApplications]
+;"BinaryStudio.VSShellIsolatedPackage2015.1.0"="SOFTWARE\\Microsoft\\BinaryStudio_VSShellIsolatedPackage2015\\1.0\\Capabilities"
+
+;[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\BinaryStudio_VSShellIsolatedPackage2015\1.0\Capabilities]
+;"ApplicationDescription"="Description of BinaryStudio.VSShellIsolatedPackage2015"
+
+;[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\BinaryStudio_VSShellIsolatedPackage2015\1.0\Capabilities\FileAssociations]
+;".BinaryStudio_VSShellIsolatedPackage2015_ext"="BinaryStudio_VSShellIsolatedPackage2015.BinaryStudio_VSShellIsolatedPackage2015_ext.1.0"

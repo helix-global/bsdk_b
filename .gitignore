@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs/bsdk/v16
+/.intermediate
+/src/dotnet/assemblies/BinaryStudio.VSShellIsolatedPackageLauncher.2015/.intermediate
+/src/dotnet/assemblies/BinaryStudio.VSShellIsolatedPackageUI.2015/.intermediate
+*.user
