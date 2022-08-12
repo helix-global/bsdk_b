@@ -2,8 +2,13 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+*.user
 /.vs/bsdk/v16
 /.intermediate
 /src/dotnet/assemblies/BinaryStudio.VSShellIsolatedPackageLauncher.2015/.intermediate
 /src/dotnet/assemblies/BinaryStudio.VSShellIsolatedPackageUI.2015/.intermediate
-*.user
+/src/dotnet/assemblies/BinaryStudio.VSShellIsolatedPackage.2015/bin
+/src/dotnet/assemblies/BinaryStudio.VSShellIsolatedPackage.2015/obj
+/src/dotnet/assemblies/BinaryStudio.VSShellIsolatedPackageVSIX.2015/bin
+/src/dotnet/assemblies/BinaryStudio.VSShellIsolatedPackageVSIX.2015/obj
+/Debug/Extensions/Unused.pkgdef

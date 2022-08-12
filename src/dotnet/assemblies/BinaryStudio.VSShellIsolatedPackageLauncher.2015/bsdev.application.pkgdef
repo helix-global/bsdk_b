@@ -4,7 +4,7 @@
 "ThisVersionDTECLSID"="{e2bce311-9196-4cc1-a415-851ee20c7239}"
 "ThisVersionSolutionCLSID"="{dc958279-b010-4126-92ff-d35a5f6c1ed4}"
 "SplashScreenBitmap"="$RootFolder$\Splash.bmp"
-"AppName"="BinaryStudio_VSShellIsolatedPackage2015"
+"AppName"="BinaryStudio.VSShellIsolatedPackage.2015"
 "AppIcon"="$RootFolder$\ApplicationIcon.ico"
 "ProductVersion"="1.0"
 "CommandLineLogo"="My Company BinaryStudio.VSShellIsolatedPackage2015 Version 1.0"
@@ -70,10 +70,10 @@
 "DefaultVsProfile"="$RootFolder$\Profiles\General.vssettings"
 
 [$RootKey$\Packages\{b94dcb28-a71e-45da-8b67-11e5c0fe2999}]
-"Inprocserver32"="$RootFolder$\BinaryStudio.VSShellIsolatedPackage2015.exe"
+"Inprocserver32"="$RootFolder$\bsdev.exe"
 
 [$RootKey$\Packages\{b94dcb28-a71e-45da-8b67-11e5c0fe2999}\SatelliteDll]
-"DllName"="BinaryStudio.VSShellIsolatedPackage2015ui.dll"
+"DllName"="BinaryStudio.VSShellIsolatedPackageUI.2015.dll"
 "Path"="$RootFolder$"
 
 // Create local VS template location

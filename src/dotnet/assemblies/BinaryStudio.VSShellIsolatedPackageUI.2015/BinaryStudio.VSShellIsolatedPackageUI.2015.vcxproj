@@ -44,13 +44,13 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>$(ProjectDir)..\..\..\..\.intermediate\1033\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\..\.intermediate\bsdev\1033\</OutDir>
     <PkgdefFileWithMenuEntry>$(SolutionDir)$(Configuration)\Extensions\Unused.pkgdef</PkgdefFileWithMenuEntry>
     <IntDir>.intermediate\$(PlatformTarget)\$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>$(ProjectDir)..\..\..\..\.intermediate\1033\</OutDir>
+    <OutDir>$(ProjectDir)..\..\..\..\.intermediate\bsdev\1033\</OutDir>
     <PkgdefFileWithMenuEntry>$(SolutionDir)$(Configuration)\Extensions\Unused.pkgdef</PkgdefFileWithMenuEntry>
     <IntDir>.intermediate\$(PlatformTarget)\$(Configuration)\</IntDir>
     <LinkIncremental>false</LinkIncremental>
