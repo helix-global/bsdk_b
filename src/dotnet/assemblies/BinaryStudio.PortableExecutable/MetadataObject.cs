@@ -12,6 +12,7 @@ namespace BinaryStudio.PortableExecutable
         public virtual MetadataObjectState State { get { return state; }}
         public MetadataScope Scope { get; }
         public MetadataObjectIdentity Identity { get; }
+        public FileMappingMemory Mapping { get;private set; }
 
         protected MetadataObject(MetadataScope scope, MetadataObjectIdentity identity)
             {
@@ -30,7 +31,7 @@ namespace BinaryStudio.PortableExecutable
                 try
                     {
                     if (disposing) {
-                        mappings.Clear();
+                        Mapping = null;
                         }
                     }
                 finally
@@ -65,53 +66,57 @@ namespace BinaryStudio.PortableExecutable
             }
         #endregion
 
-        #region M:LoadAsync(FileMappingMemory,Int64,Int64,CancellationToken):Task
-        public Task LoadAsync(FileMappingMemory source,Int64 offset,Int64 length, CancellationToken cancellationToken = default(CancellationToken))
+        #region M:LoadAsync(IntPtr[],Int64,CancellationToken):Task
+        public Task LoadAsync(IntPtr[] source,Int64 length, CancellationToken cancellationToken = default(CancellationToken))
             {
             if (source == null) { throw new ArgumentNullException(nameof(source)); }
+            if (source.Length == 0) { throw new ArgumentOutOfRangeException(nameof(source)); }
             if (length < 0) { throw new ArgumentOutOfRangeException(nameof(length)); }
-            if (offset < 0) { throw new ArgumentOutOfRangeException(nameof(offset)); }
             if (State != MetadataObjectState.Pending) { throw new InvalidOperationException(); }
             #if NET40
-            return Task.Factory.StartNew(delegate{ Load(source,offset,length); },cancellationToken);
+            return Task.Factory.StartNew(delegate{ Load(source,length); },cancellationToken);
             #else
-            return Task.Run(delegate{ Load(source,offset,length); },cancellationToken);
+            return Task.Run(delegate{ Load(source,length); },cancellationToken);
             #endif
             }
         #endregion
-        #region M:Load(FileMappingMemory,Int64,Int64)
-        public unsafe void Load(FileMappingMemory source,Int64 offset, Int64 length)
+        #region M:Load(IntPtr[],Int64)
+        public void Load(IntPtr[] source,Int64 length)
             {
             if (source == null) { throw new ArgumentNullException(nameof(source)); }
+            if (source.Length == 0) { throw new ArgumentOutOfRangeException(nameof(source)); }
             if (length < 0) { throw new ArgumentOutOfRangeException(nameof(length)); }
-            if (offset < 0) { throw new ArgumentOutOfRangeException(nameof(offset)); }
             if (State != MetadataObjectState.Pending) { throw new InvalidOperationException(); }
-            Debug.Print("Loading {{{0}}}:{{{1}}}...", Identity,GetType().Name);
             try
                 {
                 state = MetadataObjectState.Loading;
-                mappings.Push(source);
-                LoadCore(((Byte*)(void*)source) + offset, length);
+                LoadCore(source, length);
                 state = MetadataObjectState.Loaded;
                 }
             catch
                 {
-                mappings.Pop();
                 state = MetadataObjectState.Failed;
                 }
-            Debug.Print("Completed {{{0}}}:{{{1}}}...", Identity,GetType().Name);
             }
         #endregion
-        #region M:LoadCore(Byte*,Int64)
-        protected virtual unsafe void LoadCore(Byte* source,Int64 length)
+        #region M:LoadCore(IntPtr[],Int64)
+        /// <summary>Loads content from specified source.</summary>
+        /// <param name="source">Content specific source addresses depending on its type.</param>
+        /// <param name="length">Length of content.</param>
+        protected virtual void LoadCore(IntPtr[] source,Int64 length)
             {
             if (source == null) { throw new ArgumentNullException(nameof(source)); }
             if (length < 0) { throw new ArgumentOutOfRangeException(nameof(length)); }
             }
         #endregion
+        #region M:AttachFileMapping(FileMappingMemory)
+        public virtual void AttachFileMapping(FileMappingMemory mapping)
+            {
+            Mapping = mapping;
+            }
+        #endregion
 
         private MetadataObjectState state = MetadataObjectState.Pending;
-        private readonly Stack<FileMappingMemory> mappings = new Stack<FileMappingMemory>();
         private Boolean Disposed;
         }
     }

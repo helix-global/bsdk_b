@@ -49,7 +49,7 @@ namespace BinaryStudio.PortableExecutable
         /// <summary>Loads metadata from specified file.</summary>
         /// <param name="filename">File name containing metadata.</param>
         /// <returns>Created or existing metadata object.</returns>
-        public MetadataObject Load(String filename) {
+        public unsafe MetadataObject Load(String filename) {
             if (filename == null) { throw new ArgumentNullException(nameof(filename)); }
             if (String.IsNullOrWhiteSpace(filename)) { throw new ArgumentOutOfRangeException(nameof(filename)); }
             MetadataObject r = null;
@@ -59,7 +59,6 @@ namespace BinaryStudio.PortableExecutable
                 using (UpgradeableReadLock(ObjectCacheLock)) {
                     /* TODO: Make file path absolute */
                     var identity = new MetadataObjectIdentity(filename, FileServiceGuid);
-                    Debug.Print("Loading{{async}} {{{0}}}...", identity);
                     if (!objects.TryGetValue(identity, out r)) {
                         var type = Recognize(mapping);
                         if (type != null) {
@@ -71,13 +70,14 @@ namespace BinaryStudio.PortableExecutable
                             if (ctor == null) { throw new MissingMethodException(); }
                             using (WriteLock(ObjectCacheLock)) {
                                 objects[identity] = r = (MetadataObject)ctor.Invoke(new Object[]{this, identity });
+                                r.AttachFileMapping(mapping);
                                 }
                             }
                         }
                     }
                 }
             if (r == null) { return null; }
-            Task.Factory.StartNew(() => r.Load(mapping, 0, mapping.Mapping.Size)).Wait();
+            Task.Factory.StartNew(() => r.Load(new [] { (IntPtr)mapping }, mapping.Mapping.Size)).Wait();
             return r;
             }
 
