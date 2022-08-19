@@ -3,7 +3,7 @@
 ################################################################################
 
 *.user
-/.vs/bsdk/v16
+/.vs
 /.intermediate
 /src/dotnet/assemblies/BinaryStudio.VSShellIsolatedPackageLauncher.2015/.intermediate
 /src/dotnet/assemblies/BinaryStudio.VSShellIsolatedPackageUI.2015/.intermediate
@@ -37,3 +37,14 @@
 /packages/Microsoft.VisualStudio.Utilities.14.3.25407
 /packages/Microsoft.VisualStudio.Validation.14.1.111
 /packages/Microsoft.VSSDK.BuildTools.14.3.25407
+/src/dotnet/assemblies/2019/BinaryStudio.VSIX/bin
+/src/dotnet/assemblies/2019/BinaryStudio.VSIX/obj
+/src/dotnet/assemblies/BinaryStudio.IO/bin
+/src/dotnet/assemblies/BinaryStudio.IO/obj
+/src/dotnet/assemblies/BinaryStudio.PlatformComponents/bin
+/src/dotnet/assemblies/BinaryStudio.PlatformComponents/obj
+/src/dotnet/assemblies/BinaryStudio.PortableExecutable/bin
+/src/dotnet/assemblies/BinaryStudio.PortableExecutable/obj
+/src/dotnet/ConsoleApp1/bin
+/src/dotnet/ConsoleApp1/obj
+
